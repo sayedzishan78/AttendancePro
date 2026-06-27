@@ -1,0 +1,20 @@
+# FastAPI and server
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Database
+sqlalchemy
+
+# Configuration
+pydantic-settings
+pydantic
+
+# Face Recognition
+insightface
+onnxruntime
+opencv-python
+numpy
+
+# Utilities
+python-dotenv

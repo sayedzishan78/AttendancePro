@@ -1,0 +1,3 @@
+@echo off
+echo Starting Multiface Recognition API...
+python run.py

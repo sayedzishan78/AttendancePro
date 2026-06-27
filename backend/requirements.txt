@@ -1,0 +1,27 @@
+# FastAPI and server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# Database
+sqlalchemy>=2.0.0
+pymysql>=1.0.2  # MySQL connector
+cryptography>=41.0.0  # Required for PyMySQL
+
+# Configuration
+pydantic-settings>=2.1.0
+pydantic>=2.5.0
+
+# Security
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# Face Recognition
+deepface>=0.0.79
+tf-keras>=2.15.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# Utilities
+python-dotenv>=1.0.0
