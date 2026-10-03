@@ -6,4 +6,3 @@ pydantic-settings
 sqlalchemy
 pymysql
 python-dotenv
-pydantic-settings/
