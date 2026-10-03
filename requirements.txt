@@ -1,8 +1,10 @@
 fastapi
 uvicorn
+gunicorn
 opencv-python
 deepface
 mysql-connector-python
 numpy
 pandas
 python-multipart
+pydantic-settings
