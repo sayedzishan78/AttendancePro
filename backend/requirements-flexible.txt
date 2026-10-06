@@ -13,7 +13,7 @@ pydantic
 # Face Recognition
 insightface
 onnxruntime
-opencv-python
+opencv-python-headless
 numpy
 
 # Utilities
