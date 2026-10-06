@@ -2,14 +2,19 @@
 Main FastAPI application for Professional Attendance Monitoring System.
 """
 import os
+import sys
+
+# Add project root directory to Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
-from app.core.config import settings
-from app.core.database import init_database, get_db
-from app.api.routes import router
+from backend.app.core.config import settings
+from backend.app.core.database import init_database, get_db
+from backend.app.api.routes import router
 
 # Initialize database
 init_database()
@@ -70,7 +75,7 @@ else:
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
-        "app.main:app",
+        "backend.app.main:app",
         host=settings.HOST,
         port=settings.PORT,
         reload=settings.DEBUG
