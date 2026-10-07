@@ -4,8 +4,10 @@ Main FastAPI application for Professional Attendance Monitoring System.
 import os
 import sys
 
-# Add project root directory to Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+# Ensure project root directory is in Python path for absolute imports
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -25,7 +27,7 @@ app = FastAPI(
     version=settings.APP_VERSION,
     description="Professional Attendance Monitoring System with Face Recognition",
     docs_url="/docs",
-    redoc_url="/redoc"
+    redoc_url="/redoc",
 )
 
 # Configure CORS
@@ -41,7 +43,7 @@ app.add_middleware(
 app.include_router(router, prefix="/api", tags=["Attendance Monitoring"])
 
 # Define frontend build directory path
-frontend_dist = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "dist"))
+frontend_dist = os.path.abspath(os.path.join(PROJECT_ROOT, "frontend", "dist"))
 
 # Mount static assets if directory exists
 if os.path.exists(frontend_dist):
@@ -67,8 +69,8 @@ else:
                 "Real-time face recognition",
                 "Professional attendance tracking",
                 "MySQL database integration",
-                "Advanced reporting and analytics"
-            ]
+                "Advanced reporting and analytics",
+            ],
         }
 
 
@@ -78,5 +80,5 @@ if __name__ == "__main__":
         "backend.app.main:app",
         host=settings.HOST,
         port=settings.PORT,
-        reload=settings.DEBUG
+        reload=settings.DEBUG,
     )
