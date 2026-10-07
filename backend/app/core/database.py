@@ -7,7 +7,6 @@ from sqlalchemy.engine.url import make_url
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# FIX: Added 'backend.' prefix to import
 from backend.app.core.config import settings
 
 logger = logging.getLogger(__name__)
@@ -51,7 +50,6 @@ def init_database():
     Initialize database with all tables.
     """
     try:
-        # FIX: Added 'backend.' prefix to all imports inside function
         from backend.app.models import attendance, user  # noqa: F401
         from backend.app.models.user import AdminUser
         from backend.app.core.security import hash_password
