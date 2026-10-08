@@ -6,3 +6,9 @@ pydantic-settings
 sqlalchemy
 pymysql
 python-dotenv
+opencv-python-headless
+deepface
+insightface
+onnxruntime
+tf-keras
+python-multipart
